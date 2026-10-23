@@ -658,7 +658,9 @@ code style.css
   flex-direction: column;
   width: 17rem;
   background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
   margin: auto;
   overflow: hidden;
@@ -868,7 +870,7 @@ self.addEventListener("install", (installEvt) => {
       .then(self.skipWaiting())
       .catch((e) => {
         console.log(e);
-      })
+      }),
   );
 });
 
@@ -883,10 +885,10 @@ self.addEventListener("activate", function (evt) {
               console.log("Removed old cache from", key);
               return caches.delete(key);
             }
-          })
+          }),
         );
       })
-      .then(() => self.clients.claim())
+      .then(() => self.clients.claim()),
   );
 });
 
@@ -896,7 +898,7 @@ self.addEventListener("fetch", function (evt) {
       return caches.open(CATALOGUE_ASSETS).then((cache) => {
         return cache.match(evt.request);
       });
-    })
+    }),
   );
 });
 ```
@@ -954,29 +956,24 @@ Congratulations on completing the core tutorial! You now have a working Flask PW
 ### Available Extensions
 
 1. **[Extension 1: Create Email Subscription Form](extensions.md#extension-1-create-email-subscription-form)** ⭐⭐
-
    - Build a complete contact form with database integration
    - Learn HTTP methods (GET vs POST) and form handling
    - Practice SQL INSERT operations with parameterised queries
 
 2. **[Extension 2: Handle Duplicate Email Submissions](extensions.md#extension-2-handle-duplicate-email-submissions)** ⭐⭐
-
    - Implement Python exception handling with try-except
    - Handle SQL UNIQUE constraint violations gracefully
    - Display user-friendly error messages
 
 3. **[Extension 3: Refactor Database Calls with Context Managers](extensions.md#extension-3-refactor-database-calls-with-context-managers)** ⭐
-
    - Improve code reliability and resource management
    - Learn Python best practices with the `with` statement
 
 4. **[Extension 4: Add Language Filtering to the Extensions Catalogue](extensions.md#extension-4-add-language-filtering-to-the-extensions-catalogue)** ⭐⭐
-
    - Implement URL query parameters and dynamic filtering
    - Practice full-stack development with Flask and SQL
 
 5. **[Extension 5: Add Online/Offline Status Detection](extensions.md#extension-5-add-onlineoffline-status-detection)** ⭐⭐
-
    - Enhance user experience with network status notifications
    - Learn JavaScript event handling for PWAs
 
